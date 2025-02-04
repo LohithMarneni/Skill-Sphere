@@ -1,9 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins'); 
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 @import "tailwindcss";
-*
-{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', serif;
-  box-sizing: border-box;
+*{
+    font-family: 'Poppins', serif;
+}
+a {
+    color: black;  /* Ensure all links are black */
+    text-decoration: none;  /* Remove underline */
+  }
+  
+  a:hover {
+    color: gray; /* Slightly lighter black on hover */
+  }
+  
+  a:visited {
+    color: black; /* Ensure visited links remain black */
+  }
+  
+  a:active {
+    color: black; /* Ensure active links remain black */
+  }
+  
+  a:focus {
+    outline: none; /* Remove focus outline */
+  }
+  /* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background:black ; /* Scroll thumb color */
+  
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Hover effect */
 }
