@@ -1,17 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
-// Dummy Card component
-function Card({ heading, text }) {
-  return (
-    <div className="bg-white shadow-lg rounded-lg p-6 w-1/4">
-      <h3 className="text-xl font-semibold text-black mb-3">{heading}</h3>
-      <p className="text-gray-700">{text}</p>
-    </div>
-  );
-}
+import Card from "./Card";
+import { useState } from "react";
 
 function Home() {
   const navigate = useNavigate();
+const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("userToken") ? true : false
+  );
 
   return (
     <div className="w-full min-h-screen bg-gray-100 ">
@@ -25,12 +21,13 @@ function Home() {
           <p className="text-lg text-gray-700 mt-4">
             Your gateway for Skill Building and Career Advancement Roadmap.
           </p>
-          <button
+        <button
             className="mt-6 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition"
             onClick={() => navigate("/login")}
           >
-            Get Started
+           Get Started
           </button>
+          
         </div>
 
         {/* Right Section - Image */}

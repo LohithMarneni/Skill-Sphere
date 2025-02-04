@@ -10,7 +10,11 @@ import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Login from './components/Login/Login.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
 import { AuthProvider } from './context/authContext.jsx';
+import CreateCourse from './components/CreateCourse/CreateCourse.jsx';
+import GetQuiz from './components/Quiz/getQuiz.jsx';
+import SubmitQuiz from './components/Quiz/submitQuiz.jsx';
 export const server = "http://localhost:3000/api/";
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,7 +26,11 @@ const router = createBrowserRouter([
       { path: 'login', element: <Login /> },
       { path: 'signup', element: <SignUp /> },
       { path: 'courses', element: <Courses /> },
+      { path: 'addCourse', element: <CreateCourse /> },
+      { path: 'getQuiz', element: <GetQuiz /> },
+      { path: 'submitQuiz', element: <SubmitQuiz /> },
       { path: '*', element: <h1>Not Found</h1> }
+      
     ]
   }
 ]);
