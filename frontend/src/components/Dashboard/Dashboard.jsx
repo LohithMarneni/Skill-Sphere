@@ -1,11 +1,18 @@
 import Card from "./Card"
+import { useNavigate } from "react-router-dom";
 function Dashboard() {
+    const navigate = useNavigate();
   return (
     <div className="box flex flex-col gap-2 p-2">
         <div className="welcome flex justify-center items-center p-10 flex-col gap-2">
-            <h2 className="text-7xl text-black hover:text-violet-700 hover:scale-110 transition-all duration-200">Welcome to Skill Sphere</h2>
+            <h2 className="text-7xl text-black hover:text-grey-700 hover:scale-110 transition-all duration-200">Welcome to Skill Sphere</h2>
             <p className="text-xl">Your Ultimate AI-Powered Learning Companion</p>
-            <button className="px-4 py-2 bg-black text-white rounded-lg">Get Started</button>
+            <button
+          className="mt-6 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition"
+          onClick={() => navigate("/login")}
+        >
+          Get Started
+        </button>
         </div>
         <div>
             <div className="p-4 flex justify-center items-center">

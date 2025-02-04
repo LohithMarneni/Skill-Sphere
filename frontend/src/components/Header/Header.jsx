@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-
-function Header({ isAuthenticated, setIsAuthenticated }) {
+import { useAuth } from "../../context/authContext";
+function Header() {
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    setIsAuthenticated(false);
+    logout();
     navigate("/");
   };
 
@@ -43,7 +43,7 @@ function Header({ isAuthenticated, setIsAuthenticated }) {
         ) : (
           <button
             onClick={handleLogout}
-            className="bg-red-500 px-3 py-1 rounded"
+            className="bg-black text-white px-3 py-1 rounded"
           >
             Logout
           </button>

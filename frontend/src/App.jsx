@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -9,10 +9,10 @@ function App() {
   );
 
   return (
-    <div className="flex flex-col min-h-screen">  {/* Ensures full height */}
+    <div className="flex flex-col min-h-screen">
       <Header isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
       
-      <div className="flex-grow"> {/* Pushes Footer to bottom */}
+      <div className="flex-grow">
         <Outlet context={{ isAuthenticated, setIsAuthenticated }} />
       </div>
 
